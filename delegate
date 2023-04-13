@@ -1,0 +1,68 @@
+using System;
+class Program {
+  public static void Main () {
+    float a,b;
+    func func = new func();
+    Console.WriteLine("Выберите нужную функцию:\n1.Сложение\n2.Умножение\n3.Деление\n4.Вычетание");
+    int n = Convert.ToInt32(Console.ReadLine());
+    switch(n){
+      case 1:
+        Console.Clear();
+        Console.WriteLine("СЛОЖЕНИЕ\nВведите первое число:");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите второе значение");
+        b = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Результат:");
+        Console.WriteLine(func.Sloshenie(a,b));
+        break;
+      case 2:
+        Console.Clear();
+        Console.WriteLine("УМНОЖЕНИЕ\nВведите первое число:");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите второе значение");
+        b = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Результат:");
+        Console.WriteLine(func.Ymnoshenie(a,b));
+        break;
+      case 3:
+        Console.Clear();
+        Console.WriteLine("ДЕЛЕНИЕ\nВведите первое число:");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите второе значение");
+        b = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Результат:");
+        Console.WriteLine(func.Delenie(a,b));
+        break;
+      case 4:
+        Console.Clear();
+        Console.WriteLine("ВЫЧИТАНИЕ\nВведите первое число:");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите второе значение");
+        b = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Результат:");
+        Console.WriteLine(func.Vichitanie(a,b));
+        break;
+    }
+  }
+  }
+  public interface F {
+    float Sloshenie(float a,float b);
+    float Ymnoshenie(float a, float b);
+    float Delenie(float a,float b);
+    float Vichitanie(float a, float b);
+  } 
+public class func : F {
+  private float count;
+  public float Sloshenie(float a, float b){
+    return count = a + b;
+  }
+  public float Ymnoshenie(float a, float b){
+    return count = a * b;
+  }
+  public float Delenie(float a, float b){
+    return count = a / b;
+  }
+  public float Vichitanie(float a, float b){
+    return count = a - b;
+  }
+}
